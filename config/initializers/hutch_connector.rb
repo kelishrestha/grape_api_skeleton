@@ -1,5 +1,5 @@
-# Hutch Connector
 module Hutch
+  # Hutch Connector
   module Connector
     def self.establish_connection
       hutch_config = config
