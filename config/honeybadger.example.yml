@@ -1,0 +1,10 @@
+defaults: &defaults
+  logging:
+    path: '/home/deploy/calandar/shared/log/honeybadger.log'
+    level: 'WARN'
+
+api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
+
+production:
+  <<: *defaults
+

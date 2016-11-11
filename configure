@@ -1,0 +1,13 @@
+#!/bin/bash -x
+mkdir -p .git/hooks
+cp pre-push .git/hooks/pre-push
+chmod +x .git/hooks/pre-push
+
+source .secrets
+cp config/hutch.example.yml config/hutch.yml
+cp config/database.example.yml config/database.yml
+cp config/consumers.example.yml config/consumers.yml
+cp config/honeybadger.example.yml config/honeybadger.yml
+cp config/sidekiq.example.yml config/sidekiq.yml
+cp config/redis.example.yml config/redis.yml
+

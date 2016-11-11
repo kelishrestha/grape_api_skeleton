@@ -1,0 +1,11 @@
+defaults: &defaults
+  mq_host: localhost
+  mq_vhost: '/'
+  mq_username: <%= ENV['RABBITMQ_USER'] %>
+  mq_password: <%= ENV['RABBITMQ_PASSWORD'] %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults

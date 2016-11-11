@@ -1,0 +1,25 @@
+defaults: &defaults
+  adapter: postgresql
+  host: <%= ENV['HOST'] %>
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  database: <%= ENV['DATABASE'] %>
+
+development:
+  <<: *defaults
+  host: localhost
+  encoding: UTF8
+  username: postgres
+  password:
+  database: skeleton_development
+
+test:
+  <<: *defaults
+  host: localhost
+  encoding: UTF8
+  username: postgres
+  password:
+  database: skeleton_test
+
+production:
+  <<: *defaults

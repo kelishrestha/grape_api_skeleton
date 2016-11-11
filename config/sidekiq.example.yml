@@ -1,0 +1,3 @@
+:concurrency: 25
+#NOTE: Please arrange the queues in descending order based on each queue's weight.
+:queues:
