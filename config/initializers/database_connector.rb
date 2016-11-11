@@ -4,9 +4,7 @@ require File.join(File.expand_path('../', __FILE__), 'app_logger.rb')
 module Database
   # Database Connector
   module Connector
-    extend self
-
-    def establish_connection
+    def self.establish_connection
       ActiveRecord::Base.establish_connection(config)
     end
 

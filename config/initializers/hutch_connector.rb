@@ -1,9 +1,7 @@
 # Hutch Connector
 module Hutch
   module Connector
-    extend self
-
-    def establish_connection
+    def self.establish_connection
       hutch_config = config
       Hutch::Config.initialize.merge!(mq_username: hutch_config['mq_username'],
                                       mq_password: hutch_config['mq_password'],
