@@ -1,5 +1,5 @@
 require 'logger'
-
+# Logging Mechanism
 module AppLogger
   class << self
     def logger_instance

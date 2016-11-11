@@ -1,3 +1,4 @@
+# Hutch Connector
 module Hutch
   module Connector
     extend self

@@ -6,6 +6,7 @@ Honeybadger.start(honeybadger_config)
 # use Honeybadger::Rack::ErrorNotifier, honeybadger_config
 # use Honeybadger::Rack::MetricsReporter, honeybadger_config
 
+# Error Notifying Mechanism
 module ErrorNotifier
   def notify_error_tracker(e, params = {}, reraise_exception = true)
     logger.info(params.to_json)

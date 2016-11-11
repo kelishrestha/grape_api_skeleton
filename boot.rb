@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'bundler'
 
+# App Module
 module App
   def self.root
     @root_path ||= FileUtils.pwd
