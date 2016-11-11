@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This is a mixin module to generate random id.
 module RandomAlphaNumeric
   def generate_unique_id(field: :uid)
