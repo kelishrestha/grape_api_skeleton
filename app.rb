@@ -5,7 +5,6 @@ require File.expand_path('../boot', __FILE__)
 module Skeleton
   #  API class to mount all the Base API endpints
   class App < Grape::API
-
     rescue_from :all do |exception|
       ErrorNotifier.notify_error_tracker(exception)
       error!({ message: 'Internal server error' }, 500)

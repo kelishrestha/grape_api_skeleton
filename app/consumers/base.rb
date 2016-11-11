@@ -6,18 +6,14 @@ module Consumer
     private
 
     def execute(message)
-      begin
-        params =  message.fetch(:body, message)
-        params = params.with_indifferent_access
+      params = message.fetch(:body, message)
+      params = params.with_indifferent_access
 
-        yield(params)
-      rescue Exception => e
-        AppLogger.logger_instance.error({
-          exception: e,
-          message: message,
-          caller: caller_locations(1, 1)[0].label
-          })
-      end
+      yield(params)
+    rescue Exception => e
+      AppLogger.logger_instance.error(exception: e,
+                                      message: message,
+                                      caller: caller_locations(1, 1)[0].label)
     end
   end
 end

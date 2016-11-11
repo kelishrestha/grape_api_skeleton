@@ -1,5 +1,5 @@
 require 'active_record'
-require File.join(File.expand_path("../", __FILE__), 'app_logger.rb')
+require File.join(File.expand_path('../', __FILE__), 'app_logger.rb')
 
 module Database
   module Connector
@@ -12,7 +12,7 @@ module Database
     private
 
     def config
-      config_file_path = File.join(File.expand_path("../..", __FILE__), 'database.yml')
+      config_file_path = File.join(File.expand_path('../..', __FILE__), 'database.yml')
       YAML.load_file(config_file_path)[ENV['RACK_ENV'] || 'development']
     end
   end
