@@ -1,0 +1,32 @@
+require: rubocop-rspec
+inherit_from: .rubocop_todo.yml
+AllCops:
+  Exclude:
+    - config/initializers/*
+  TargetRubyVersion:
+    2.3
+
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/AbcSize:
+  Max: 20
+
+RSpec/NestedGroups:
+  MaxNesting: 3
+
+RSpec/MessageExpectation:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+  Max: 5
+
+RSpec/MultipleExpectations:
+  Max: 2
