@@ -17,6 +17,6 @@ Dir["#{App.root}/config/initializers/*.rb"].sort.each { |file| require_relative(
 Dir["#{App.root}/lib/**/*.rb"].sort.each { |file| require_relative(file) }
 
 Dir["#{App.root}/app/models/**/*.rb"].sort.each { |file| require_relative(file) }
-Dir["#{App.root}/app/controllers/**/*.rb"].sort.each { |file| require_relative(file) }
+Dir["#{App.root}/app/controllers/**/**/*.rb"].sort.each { |file| require_relative(file) }
 Dir["#{App.root}/app/consumers/**/*.rb"].sort.each { |file| require_relative(file) }
 Dir["#{App.root}/app/sidekiq_workers/**/*.rb"].sort.each { |file| require_relative(file) }
