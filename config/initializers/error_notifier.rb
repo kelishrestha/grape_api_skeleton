@@ -8,15 +8,19 @@ Honeybadger.start(honeybadger_config)
 
 # Error Notifying Mechanism
 module ErrorNotifier
-  def notify_error_tracker(e, params = {}, reraise_exception = true)
+  def notify_error_tracker(excp, params = {})
+    data = params.except!(:reraise_exception)
+    reraise_exception = retrieve_exception_info(data)
     logger.info(params.to_json)
-    honeybadger_error_tracker(e, params, reraise_exception)
+    ::Honeybadger.notify(excp, parameters: params)
+    # Re-raise exception for development environment
+    raise excp if reraise_exception && ENV['RACK_ENV'] == 'development'
   end
 
-  def honeybadger_error_tracker(e, params = {}, reraise_exception = true)
-    ::Honeybadger.notify(e, parameters: params)
-    # reraise the exception for development environment
-    raise e if reraise_exception && ENV['RACK_ENV'] == 'development'
+  private
+
+  def retrieve_exception_info(data)
+    reraise_exception = data[:reraise_exception] || true
   end
 end
 
