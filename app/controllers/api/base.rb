@@ -17,7 +17,7 @@ module API
           method: env['REQUEST_METHOD'].to_s,
           payload: env['rack.request.form_hash'].inspect.to_s
         }
-        notify_error(e, msg)
+        notify_error(excp, msg)
       end
 
       # Protecting attributes being updated if they haven't been declared
