@@ -10,7 +10,7 @@ module Database
 
     private
 
-    def config
+    def self.config
       config_file_path = File.join(File.expand_path('../..', __FILE__), 'database.yml')
       YAML.load_file(config_file_path)[ENV['RACK_ENV'] || 'development']
     end

@@ -6,8 +6,8 @@ module Hutch
       rmq_host = hutch_config['mq_host']
       Hutch::Config.initialize.merge!(mq_username: hutch_config['mq_username'],
                                       mq_password: hutch_config['mq_password'],
-                                      mq_host: rbq_host,
-                                      mq_api_host: rbq_host,
+                                      mq_host: rmq_host,
+                                      mq_api_host: rmq_host,
                                       mq_vhost: hutch_config['mq_vhost'],
                                       channel_prefetch: 1,
                                       force_publisher_confirms: true)
@@ -15,7 +15,7 @@ module Hutch
 
     private
 
-    def config
+    def self.config
       path = File.expand_path('../../hutch.yml', __FILE__)
       YAML.load(ERB.new(File.read(path)).result)[(ENV['RACK_ENV'] || 'development')]
     end
