@@ -9,10 +9,10 @@ module API
       end
 
       # log errors after catching exception
-      def log_error(e)
+      def log_error(excp)
         msg = {
-          error_class: e.class.to_s,
-          message: e.to_s,
+          error_class: excp.class.to_s,
+          message: excp.to_s,
           url: env['REQUEST_URI'].to_s,
           method: env['REQUEST_METHOD'].to_s,
           payload: env['rack.request.form_hash'].inspect.to_s

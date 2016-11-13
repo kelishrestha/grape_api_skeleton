@@ -17,12 +17,13 @@ module AppLogger
     end
 
     def log_file
-      if ENV['RACK_ENV'] == 'development'
+      rack_env = ENV['RACK_ENV']
+      if rack_env == 'development'
         @log_file ||= STDOUT
       else
-        file_path = File.join('log', "#{ENV['RACK_ENV']}.log")
-        @log_file ||= File.new(file_path, 'a+').tap do |f|
-          f.sync = true
+        file_path = File.join('log', "#{rack_env}.log")
+        @log_file ||= File.new(file_path, 'a+').tap do |file|
+          file.sync = true
         end
       end
     end

@@ -10,8 +10,8 @@ module Consumer
       params = params.with_indifferent_access
 
       yield(params)
-    rescue => e
-      AppLogger.logger_instance.error(exception: e,
+    rescue => excp
+      AppLogger.logger_instance.error(exception: excp,
                                       message: message,
                                       caller: caller_locations(1, 1)[0].label)
     end
