@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require './app.rb'
 module Consumer
-  # :nodoc:
+  # Base Consumer
   module Base
     private
 
