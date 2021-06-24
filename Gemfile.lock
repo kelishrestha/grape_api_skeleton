@@ -133,7 +133,7 @@ GEM
       pry (>= 0.9.10, < 0.11.0)
     puma (3.6.0)
     puma (3.6.0-java)
-    rack (1.6.4)
+    rack (1.6.13)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-protection (1.5.3)
